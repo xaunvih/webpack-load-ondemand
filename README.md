@@ -31,7 +31,7 @@ __webpack_get_script_filename__ = function (chunk) {
 
 ### Webpack 04
 
-For some reasons, we still have to maintain basecode used `webpack` 04. So, I come up with another solution. That is we can create one plugin to tap on compile time. This purpose is customize `jsonpScriptSrc` of webpack to return edited assest path.
+For some reasons, we still have to maintain basecode used `webpack` 04. So, We come up with another solution. That is we can create one plugin to tap on compile time. This purpose is customize `jsonpScriptSrc` of webpack to return edited assest path.
 
 ```js
 const assert = require('assert');
@@ -70,7 +70,7 @@ class JsonpScriptSrcPlugin {
 exports.JsonpScriptSrcPlugin = JsonpScriptSrcPlugin;
 ```
 
-And, add it to webpack config as plugin:
+And, add it to webpack configuration as plugin:
 
 ```js
 ...
@@ -78,7 +78,7 @@ plugins: [new JsonpScriptSrcPlugin()],
 ...
 ```
 
-Finally, defining `__webpack_get_script_src__` in your main file. And now, we can add the params when Webpack load chunk
+Finally, defining `__webpack_get_script_src__` in your main javascript file. And now, we can add the params when Webpack load chunk
 
 ```js
 window.__webpack_get_script_src__ = function (chunkId, sourceDir, sourcePath) {
