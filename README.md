@@ -4,7 +4,7 @@
 
 With `webpack 05`, Make customizeable assest path easier with `__webpack_get_script_filename__` function at run time
 
-Live demo here: https://unpkg.com/dragscroll-ts@1.0.4/build/dragscroll.min.js
+Live demo here: https://xaunvih.github.io/webpack-load-ondemand/
 
 ```js
 // Dynamic path: this line make assets path automatic. It depend on domain name
