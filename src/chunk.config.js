@@ -1,13 +1,12 @@
-// Dynamic path
+// Config assest path at run time
 let path = PRODUCTION ? '/webpack-load-ondemand/' : '/docs/';
 __webpack_public_path__ = window.location.origin + path;
 
-// Dynamic chunk file
-const __oldWebpackGetScriptFileName = __webpack_get_script_filename__;
+// Config assest file name at run time
+const __webpack_get_script_filename_old__ = __webpack_get_script_filename__;
 
-// eslint-disable-line
 __webpack_get_script_filename__ = function (chunk) {
-    let src = __oldWebpackGetScriptFileName(chunk);
+    let src = __webpack_get_script_filename_old__(chunk);
 
     // Customize any params here
     // Url lib: https://unpkg.com/dragscroll-ts@1.0.4/build/dragscroll.min.js

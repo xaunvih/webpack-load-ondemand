@@ -7,17 +7,19 @@ With `webpack 05`, Make customizeable assest path easier with `__webpack_get_scr
 Live demo here: https://xaunvih.github.io/webpack-load-ondemand/
 
 ```js
-// Dynamic path: this line make assets path automatic. It depend on domain name
-__webpack_public_path__ = window.location.origin + '/build/';
+// Config assest path at run time
+let path = PRODUCTION ? '/webpack-load-ondemand/' : '/docs/';
+__webpack_public_path__ = window.location.origin + path;
 
 // Dynamic chunk file:
 // Run time global variable: https://github1s.com/webpack/webpack/blob/HEAD/lib/APIPlugin.js
 // Test case of it: https://github1s.com/webpack/webpack/blob/HEAD/test/configCases/filename-template/script-src-filename/index.js
 
-const __oldWebpackGetScriptFileName = __webpack_get_script_filename__;
+// Config assest file name at run time
+const __webpack_get_script_filename_old__ = __webpack_get_script_filename__;
 
 __webpack_get_script_filename__ = function (chunk) {
-    let src = __oldWebpackGetScriptFileName(chunk);
+    let src = __webpack_get_script_filename_old__(chunk);
 
     // Customize any params here
     // Url lib: https://unpkg.com/dragscroll-ts@1.0.4/build/dragscroll.min.js
