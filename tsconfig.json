@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "docs",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "module": "esnext",
+        "target": "es5",
+        "allowJs": false,
+        "moduleResolution": "node",
+        "esModuleInterop": false
+    },
+    "include": ["./src/**/*.ts"]
+}

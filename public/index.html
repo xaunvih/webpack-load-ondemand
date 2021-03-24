@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic import | Demonstration</title>
+</head>
+
+<body>
+    <h3>Swiper - Load chunk automatically</h3>
+    <p>Open network tab to see it: http://localhost:8080/docs/lib.swiper.js?version=1.0.0</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+        </div>
+    </div>
+
+    <h3>Press the button to load dragscroll chunk and apply it to current html</h3>
+    <button id='init-drag-scroll'>Press me to init dragscroll</button>
+
+    <div class="drag-scroll">
+        <ul>
+            <% for (var i =1; i <= 3;  i++ ) { %>
+            <li class="item">
+                <a href="https://unsplash.com/">
+                    <img
+                        src="https://images.unsplash.com/photo-1547514701-42782101795e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZnJ1aXR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                </a>
+            </li>
+            <li class="item">
+                <a href="https://unsplash.com/">
+                    <img
+                        src="https://images.unsplash.com/photo-1421167418805-7f170a738eb4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZydWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                </a>
+            </li>
+            <li class="item">
+                <a href="https://unsplash.com/">
+                    <img
+                        src="https://images.unsplash.com/photo-1530730459653-e0edd4c6072e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fGZydWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                </a>
+            </li>
+            <li class="item">
+                <a href="https://unsplash.com/">
+                    <img
+                        src="https://images.unsplash.com/photo-1591287083773-9a52ba8184a4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fGZydWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                </a>
+            </li>
+            <li class="item">
+                <a href="https://unsplash.com/">
+                    <img
+                        src="https://images.unsplash.com/photo-1439127989242-c3749a012eac?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGZydWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+
+</html>

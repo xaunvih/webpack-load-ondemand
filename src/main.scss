@@ -1,0 +1,89 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 20px;
+    overflow: auto;
+}
+
+h3 {
+    padding: 20px 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 200px;
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+}
+
+#init-drag-scroll {
+    display: block;
+    width: 200px;
+    background: none;
+    border: 1px solid #aaa;
+    margin: 20px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.drag-scroll {
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    border: 1px solid #800080;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        white-space: nowrap;
+
+        li {
+            width: 200px;
+            height: 150px;
+            flex-shrink: 0;
+            margin-right: 20px;
+            position: relative;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
+        }
+    }
+}
