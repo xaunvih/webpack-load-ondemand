@@ -1,5 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DEV_MODE = process.env.npm_lifecycle_event == 'start';
 
 module.exports = {
     entry: {
@@ -17,6 +19,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, `public/index.html`)
+        }),
+        new webpack.DefinePlugin({
+            PRODUCTION: !DEV_MODE
         })
     ],
     module: {

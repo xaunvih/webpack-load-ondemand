@@ -1,5 +1,6 @@
 // Dynamic path
-__webpack_public_path__ = window.location.origin + '/docs/';
+let path = PRODUCTION ? '/webpack-load-ondemand/' : '/docs/';
+__webpack_public_path__ = window.location.origin + path;
 
 // Dynamic chunk file
 const __oldWebpackGetScriptFileName = __webpack_get_script_filename__;
