@@ -2,7 +2,7 @@
 
 ### Webpack 05
 
-With `webpack 05`, Make customizeable assest path easier with `__webpack_get_script_filename__` function at run time
+With `webpack 05`, Make customizable assest path easier with `__webpack_get_script_filename__` function at run time
 
 Live demo here: https://xaunvih.github.io/webpack-load-ondemand/
 
@@ -15,7 +15,6 @@ __webpack_public_path__ = window.location.origin + path;
 // Run time global variable: https://github1s.com/webpack/webpack/blob/HEAD/lib/APIPlugin.js
 // Test case of it: https://github1s.com/webpack/webpack/blob/HEAD/test/configCases/filename-template/script-src-filename/index.js
 
-// Config assest file name at run time
 const __webpack_get_script_filename_old__ = __webpack_get_script_filename__;
 
 __webpack_get_script_filename__ = function (chunk) {
@@ -33,7 +32,7 @@ __webpack_get_script_filename__ = function (chunk) {
 
 ### Webpack 04
 
-For some reasons, we still have to maintain basecode used `webpack` 04. So, We come up with another solution. That is we can create one plugin to tap on compile time. This purpose is customize `jsonpScriptSrc` of webpack to return edited assest path.
+For some reasons, we still have to maintain basecode used `webpack` 04. So, We come up with another solution. That is we can create one plugin to tap on compile time. This purpose is to customize `jsonpScriptSrc` of webpack to return edited assest path.
 
 ```js
 const assert = require('assert');
