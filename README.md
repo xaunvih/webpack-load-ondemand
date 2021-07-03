@@ -1,4 +1,4 @@
-# Webpack Load Ondemand
+# Webpack Load Ondemand | Dynamic Chunk
 
 ### Webpack 05
 
@@ -13,7 +13,7 @@ __webpack_public_path__ = window.location.origin + path;
 
 // Dynamic chunk file:
 // Run time global variable: https://github1s.com/webpack/webpack/blob/HEAD/lib/APIPlugin.js
-// Test case of it: https://github1s.com/webpack/webpack/blob/HEAD/test/configCases/filename-template/script-src-filename/index.js
+// Its test case: https://github1s.com/webpack/webpack/blob/HEAD/test/configCases/filename-template/script-src-filename/index.js
 
 const __webpack_get_script_filename_old__ = __webpack_get_script_filename__;
 
@@ -32,7 +32,7 @@ __webpack_get_script_filename__ = function (chunk) {
 
 ### Webpack 04
 
-For some reasons, we still have to maintain basecode used `webpack` 04. So, We come up with another solution. That is we can create one plugin to tap on compile time. This purpose is to customize `jsonpScriptSrc` of webpack to return edited assest path.
+We still have to maintain with `webpack` 04. Fortunately, We come up with another solution which is created plugin to tap on COMPILE time. Its purpose is to customize `jsonpScriptSrc` of webpack to return adjusted assest path.
 
 ```js
 const assert = require('assert');
@@ -79,7 +79,7 @@ plugins: [new JsonpScriptSrcPlugin()],
 ...
 ```
 
-Finally, defining `__webpack_get_script_src__` in your main javascript file. And now, we can add the params when Webpack load chunk
+Finally, defining `__webpack_get_script_src__` in your main javascript file and customize something you want.
 
 ```js
 window.__webpack_get_script_src__ = function (chunkId, sourceDir, sourcePath) {
